@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Connexion à votre compte sportify</h2>
+        <form action="/submit" method="post">
+
+            <label for="accountType">Type de compte :</label>
+            <select id="accountType" name="accountType" required>
+                <option value="">Sélectionnez un type de compte</option>
+                <option value="Client">Client</option>
+                <option value="Personnel de sport">Personnel de sport</option>
+                <option value="Administrateur">Administrateur</option>
+            </select>
+
+            <label for="username">Identifiant :</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Me connecter</button>
+        </form>
+    </div>
+</body>
+</html>
