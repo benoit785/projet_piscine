@@ -1,3 +1,123 @@
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('image.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+/*
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex: 1;
+    width: 80%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+/*
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    color: red;
+    font-size: 24px;
+}
+
+header .subtitle {
+    color: #1e90ff;
+}
+
+header .logo {
+    width: 100px;
+    height: auto;
+}
+
+nav {
+    background-color: transparent;
+    border-bottom: 2px solid #ddd;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: #1e90ff;
+}
+
+.activities {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.activities ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.activities ul li {
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    border-top: 2px solid #ddd;
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+}
+*/
 * {
     margin: 0;
     padding: 0;
@@ -79,9 +199,30 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    text-align: center;
 }
 
 nav ul li a:hover {
+    background-color: #555;
+}
+
+.subnav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.subnav button {
+    background-color: #8B0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.subnav button:hover {
     background-color: #555;
 }
 
@@ -95,7 +236,7 @@ section h2 {
 }
 
 .activities {
-    text-align: left;
+    text-align: center;
     margin: 20px 0;
 }
 
@@ -106,6 +247,75 @@ section h2 {
 
 .activities ul li {
     margin: 10px 0;
+}
+
+.activities ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.activities ul li a:hover {
+    text-decoration: underline;
+}
+
+.coach-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.coach-profile img {
+    border-radius: 10px;
+    margin-right: 20px;
+    width: 150px;
+    height: auto;
+}
+
+.coach-info {
+    text-align: left;
+}
+
+.coach-info h3 {
+    margin-bottom: 10px;
+}
+
+.coach-info p {
+    margin-bottom: 10px;
+}
+
+.coach-info table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.coach-info table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.actions {
+    text-align: center;
+}
+
+.actions button {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.actions button:hover {
+    background-color: #555;
 }
 
 footer {
