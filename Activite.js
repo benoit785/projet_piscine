@@ -59,4 +59,3 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('coach-schedule-sat').textContent = coach.schedule.sat;
     }
 });
-
