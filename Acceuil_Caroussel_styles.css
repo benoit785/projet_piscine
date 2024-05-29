@@ -1,0 +1,18 @@
+.carousel {
+  width: 100%;
+  max-width: 200px; /* Largeur maximale de votre carousel */
+  margin: auto ;
+  overflow: hidden;
+    text-align: left;
+}
+
+.carousel img {
+  width: 100%;
+  display: none;
+  text-align: left;
+}
+
+.carousel img.active {
+  display: block;
+    text-align: left;
+}
