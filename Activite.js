@@ -10,31 +10,89 @@ document.addEventListener('DOMContentLoaded', function () {
             phone: '+33 01 23 45 67 89',
             email: 'guy.dumais@omnessports.fr',
             schedule: {
-                mon: 'AM',
-                tue: 'PM',
-                wed: 'AM',
-                thu: 'AM',
-                fri: 'PM',
-                sat: 'AM'
+                mon_8_10: 'available',
+                tue_8_10: 'unavailable',
+                wed_8_10: 'available',
+                thu_8_10: 'unavailable',
+                fri_8_10: 'available',
+                sat_8_10: 'unavailable',
+                sun_8_10: 'unavailable',
+                mon_10_12: 'unavailable',
+                tue_10_12: 'available',
+                wed_10_12: 'available',
+                thu_10_12: 'available',
+                fri_10_12: 'available',
+                sat_10_12: 'available',
+                sun_10_12: 'unavailable',
+                mon_12_14: 'unavailable',
+                tue_12_14: 'unavailable',
+                wed_12_14: 'unavailable',
+                thu_12_14: 'unavailable',
+                fri_12_14: 'available',
+                sat_12_14: 'unavailable',
+                sun_12_14: 'unavailable',
+                mon_14_16: 'available',
+                tue_14_16: 'available',
+                wed_14_16: 'available',
+                thu_14_16: 'available',
+                fri_14_16: 'available',
+                sat_14_16: 'available',
+                sun_14_16: 'unavailable',
+                mon_16_18: 'available',
+                tue_16_18: 'available',
+                wed_16_18: 'available',
+                thu_16_18: 'available',
+                fri_16_18: 'available',
+                sat_16_18: 'available',
+                sun_16_18: 'unavailable'
             },
             image: 'coach_guy_dumais.png'
         },
         fitness: {
-            name: 'Fitness Coach',
+            name: 'John DOE',
             specialty: 'Coach, Fitness',
             room: 'Salle: G-011',
             phone: '+33 01 23 45 67 90',
-            email: 'fitness.coach@omnessports.fr',
+            email: 'john.doe@omnessports.fr',
             schedule: {
-                mon: 'PM',
-                tue: 'AM',
-                wed: 'PM',
-                thu: 'PM',
-                fri: 'AM',
-                sat: 'PM'
+                mon_8_10: 'available',
+                tue_8_10: 'available',
+                wed_8_10: 'available',
+                thu_8_10: 'available',
+                fri_8_10: 'available',
+                sat_8_10: 'available',
+                sun_8_10: 'unavailable',
+                mon_10_12: 'available',
+                tue_10_12: 'available',
+                wed_10_12: 'available',
+                thu_10_12: 'available',
+                fri_10_12: 'available',
+                sat_10_12: 'available',
+                sun_10_12: 'unavailable',
+                mon_12_14: 'available',
+                tue_12_14: 'available',
+                wed_12_14: 'available',
+                thu_12_14: 'available',
+                fri_12_14: 'available',
+                sat_12_14: 'available',
+                sun_12_14: 'unavailable',
+                mon_14_16: 'available',
+                tue_14_16: 'available',
+                wed_14_16: 'available',
+                thu_14_16: 'available',
+                fri_14_16: 'available',
+                sat_14_16: 'available',
+                sun_14_16: 'unavailable',
+                mon_16_18: 'available',
+                tue_16_18: 'available',
+                wed_16_18: 'available',
+                thu_16_18: 'available',
+                fri_16_18: 'available',
+                sat_16_18: 'available',
+                sun_16_18: 'unavailable'
             },
             image: 'coach_fitness.png'
-        }
+        },
         // Ajoutez d'autres coachs ici...
     };
 
@@ -51,11 +109,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('coach-image').src = coach.image;
         document.getElementById('coach-specialty-cell').textContent = coach.specialty;
         document.getElementById('coach-name-cell').textContent = coach.name;
-        document.getElementById('coach-schedule-mon').textContent = coach.schedule.mon;
-        document.getElementById('coach-schedule-tue').textContent = coach.schedule.tue;
-        document.getElementById('coach-schedule-wed').textContent = coach.schedule.wed;
-        document.getElementById('coach-schedule-thu').textContent = coach.schedule.thu;
-        document.getElementById('coach-schedule-fri').textContent = coach.schedule.fri;
-        document.getElementById('coach-schedule-sat').textContent = coach.schedule.sat;
+
+        for (const [key, value] of Object.entries(coach.schedule)) {
+            const cell = document.getElementById(`coach-schedule-${key.replace(/_/g, '-')}`);
+            if (cell) {
+                cell.classList.add(value);
+            }
+        }
     }
 });
