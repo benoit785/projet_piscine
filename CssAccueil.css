@@ -143,11 +143,23 @@ section h2 {
 
          html { height: 100%; margin: 0; font-family: Arial, sans-serif; }
         .header { background: #0A4DA2; padding: 10px 20px; color: darkorange; text-align: center; }
-        #googleMapContainer { position: fixed; bottom: 30px; right : 10px; width: 200px; height: 150px; border: 3px solid #ccc; cursor: pointer; overflow: hidden; z-index: 5; }
+        #googleMapContainer { border-radius: 40px; position: fixed; bottom: 30px; right : 10px; width: 200px; height: 150px; border: 3px solid #ccc; cursor: pointer; overflow: hidden; z-index: 5; }
         #googleMap { width: 100%; height: 100%;   }
         .content { padding: 20px; }
         .main-info { background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin: 20px; padding: 20px; border-radius: 8px; }
-        .footer { background: gray; color: white; text-align: center; padding: 10px 20px; position: fixed; bottom: 0; width: 100%; }
+        .footer { background: transparent; color: transparent; text-align: center; padding: 10px 20px; position: fixed; bottom: 0; width: 100%; }
+
+.footers {
+    color: white;
+background: gray;
+text-align: center;
+border-top-right-radius: 20px;
+border-top-left-radius: 20px;
+}
+.pad {
+    padding-top: 10px;
+}
+
 .carousel {
   width: 45%;
   max-width: 200px; /* Largeur maximale de votre carousel */
@@ -158,6 +170,7 @@ section h2 {
 .carousel img {
   width: 100%;
   display: none;
+  border-radius: 20px;
 
    
 }
@@ -166,4 +179,125 @@ section h2 {
   display: block;
     
     
+}
+.titre-cam {
+    background-color: orange;
+    color: black;
+    border-radius: 20px;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.camera, .output {
+    margin-left: 310px;
+
+}
+.text-entre{
+    text-align: center;
+    background-color: orange;
+    margin-right: 200px; 
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.text-entre4{
+    text-align: center;
+    background-color: orange;
+    margin-right: 0px; 
+    margin-top: 0px;
+    border-radius: 20px;
+    padding: 10px;
+}
+.text-entre2{
+     margin-right: 100px; 
+    margin-top: 30px;
+    padding: 5px;
+}
+
+.text-entre3{
+     margin-right: 0px; 
+    margin-top: 150px;
+    padding: 5px;
+}
+
+
+canvas {
+    display: none;
+    margin-right: 310px;
+}
+
+.banner {
+    background-color: orange;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 40px;
+}
+
+.banner p {
+    font-weight: bolder;
+    color: black;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.carousels-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.carousel {
+    width: 45%;
+}
+.carousel2 {
+    width: 45%;
+    padding-top: 300px ;
+    padding-left: 150px;
+    border-radius: 20px;
+}
+
+
+
+.slide {
+    display: flex;
+    align-items: center;
+}
+
+.slide img {
+    width: 50%;
+    height: auto;
+}
+
+.description {
+    width: 50%;
+    padding-left: 20px;
+}
+
+.image-name {
+    color: orange;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.image-description {
+
+}
+.title-caroussel {
+     color: blue;
+    font-weight: bold;
 }
