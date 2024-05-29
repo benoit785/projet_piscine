@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 
 --
 -- Structure de la table `activite`
--- Rajout de la seule ligne suivante pour ajoute de la photo dans la table client : ALTER TABLE client ADD photo_client VARCHAR(255) DEFAULT NULL; 
+-- 
 
 
 DROP TABLE IF EXISTS `activite`;
@@ -197,7 +197,8 @@ CREATE TABLE IF NOT EXISTS `salle` (
 INSERT INTO `salle` (`id_salle`, `nom_salle`, `adresse_salle`, `capacite`) VALUES
 (1, 'Salle A', '10 rue de Paris, 75000 Paris', 20);
 COMMIT;
-
+-- Rajout de la seule ligne suivante pour ajoute de la photo dans la table client : 
+ALTER TABLE client ADD photo_client VARCHAR(255) DEFAULT NULL; 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
