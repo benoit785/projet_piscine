@@ -1,10 +1,13 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sportify - Tout Parcourir</title>
     <link rel="stylesheet" href="CssAccueil_Stan.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -21,42 +24,95 @@
                 <li><a href="votre_compte.html">Votre Compte</a></li>
             </ul>
         </nav>
-        
 
+        <div class="banner">
+            <p>Sportify : Le sport, accessible à tous !</p>
+        </div>
 
-<body>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil Sportify</title>
-    <link rel="stylesheet" href="CssAccueil_Stan.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    
-</body>
-  
+        <div class="carousels-container">
+            <div class="carousel">
+                <p class="title-caroussel">Les différents coachs :</p>
+                <div class="slider">
+                    <div class="slide">
+                        <img src="stan.jpg" alt="Tennis">
+                        <div class="description">
+                            <p class="image-name">Stanislas</p>
+                            <p class="image-description">Description du coach de Tennis.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="Basile.jpg" alt="Basketball">
+                        <div class="description">
+                            <p class="image-name">Basile</p>
+                            <p class="image-description">Description du coach de Basketball.</p>
+                        </div>
+                    </div>
 
+                    <div class="slide">
+                        <img src="Benoit.jpg" alt="Football">
+                        <div class="description">
+                            <p class="image-name">Benoit</p>
+                            <p class="image-description">Description du coach de Football.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="Adam.jpg" alt="Football">
+                        <div class="description">
+                            <p class="image-name">Adam</p>
+                            <p class="image-description">Description du coach de MMA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-entre2">
+                <p class="text-entre" >Réserver un cours</p>
+            </div>
 
-<title>Carrousel d'images</title>
-  <link rel="stylesheet" href="CssAccueil_Stan.css">
-</head>
-<body>
+             <div class="text-entre3">
+                <p class="text-entre4" >Inscrivez vous à un évènements</p>
+            </div>
 
-  <div class="carousel">
-    <p>Les différents coachs : </p>
-    <img src="Tennis.jpeg" alt="Image 1">
-
-    <img src="Basket.jpeg" alt="Image 2">
-    <img src="Foot.jpeg" alt="Image 3">
-  </div>
-  <script src="AcceuilleScriptCaroussel.js"></script>
-
-
-       
+            
+            <div class="carousel">
+                <p class="title-caroussel"> Evènements :</p>
+                <div class="slider">
+                    <div class="slide">
+                        <img src="bierePong.png" alt="Tennis">
+                        <div class="description">
+                            <p class="image-name">Bière pong</p>
+                            <p class="image-description">Tournoi bière pong le 02/06. Venez Nombreux !</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="MonsieurMuscle.png" alt="Basketball">
+                        <div class="description">
+                            <p class="image-name">Mr Muscles</p>
+                            <p class="image-description">Devenez le nouveau Mr Muscle le 03/06</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="Fête.png" alt="Football">
+                        <div class="description">
+                            <p class="image-name">Anniversaire</p>
+                            <p class="image-description">Venez fêtyer les 5 ans de Sportify, déjà! </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div> 
-
+     <div class="footers">
+          <p>Contactez Sportify par email, téléphone ou venez nous voir!</p>
+        <p>Email: contact@sportify.com</p>
+        <p>Tél: +33 1 23 45 67 89</p>
+        <p>Adresse: 123 Rue de Sport, 75000 Paris, France</p>
+        <div class= "pad">
+            <p>copyright</p>
+        </div>
+        
+    </div>
+     </div>
     <div class="footer">
-
         <p>Contactez Sportify par email, téléphone ou venez nous voir!</p>
         <p>Email: contact@sportify.com</p>
         <p>Tél: +33 1 23 45 67 89</p>
@@ -96,11 +152,16 @@
     </script>
     <script>
         $(document).ready(function(){
-            $('.carousel').slick({
+            $('.slider').slick({
                 autoplay: true,
                 autoplaySpeed: 2000,
-                dots: true,
-                infinite, speed: 500, fade: true, cssEase: 'linear' });
+                dots: false,  // Désactiver les boutons de navigation
+                arrows: false,  // Désactiver les flèches de navigation
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
         });
     </script>
 </body>
