@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture de Photo</title>
+    <link rel="stylesheet" href="CssAccueil_Stan.css">
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <p>Ajouter une photo de profil !</p>
+        </div>
+        <button id="startCamera">Afficher la Caméra</button>
+        <button id="takePhoto" disabled>Prendre une Photo</button>
+        <button id="savePhoto" style="display: none;">Conserver la Photo</button>
+        <button id="retakePhoto" style="display: none;">Reprendre la Photo</button>
+            <div class="camera">
+            <video id="video" width="640" height="480" autoplay></video>
+        </div>
+        <div class="output">
+        
+            <canvas id="canvas" width="300" height="200"></canvas>
+        </div>
+    </div>
+    <script src="AcceuilleScriptCaroussel.js"></script>
+</body>
+</html>
