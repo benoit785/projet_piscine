@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1>Sportify: <span class="subtitle">Consultation Sportive</span></h1>
+        <header>
+            <h1>Sportify: <span class="subtitle">Consultation Sportive</span></h1>
             <img src="image.png" alt="Logo Sportify" class="logo">
         </header>
         <nav>
@@ -22,9 +23,8 @@
         </nav>
     </div>
     <div class="container">
-        <h2>Créer votre compte sportify</h2>
+        <h2>Créer votre compte Sportify</h2>
         <form action="/submit" method="post">
-
             <label for="accountType">Type de compte :</label>
             <select id="accountType" name="accountType" required>
                 <option value="">Sélectionnez un type de compte</option>
@@ -33,7 +33,7 @@
                 <option value="Administrateur">Administrateur</option>
             </select>
 
-            <label for="name">Prenom :</label>
+            <label for="name">Prénom :</label>
             <input type="text" id="name" name="name" required>
 
             <label for="lastname">Nom :</label>
