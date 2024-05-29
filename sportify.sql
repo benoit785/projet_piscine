@@ -25,7 +25,8 @@ SET time_zone = "+00:00";
 
 --
 -- Structure de la table `activite`
---
+-- Rajout de la seule ligne suivante pour ajoute de la photo dans la table client : ALTER TABLE client ADD photo_client VARCHAR(255) DEFAULT NULL; 
+
 
 DROP TABLE IF EXISTS `activite`;
 CREATE TABLE IF NOT EXISTS `activite` (
