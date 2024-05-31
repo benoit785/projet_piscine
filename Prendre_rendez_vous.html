@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_activites_Sportives.css">
+    <link rel="stylesheet" href="style_rdv.css">
     <title>Prendre un RDV</title>
     <style>
         .schedule-table th, .schedule-table td {
@@ -30,7 +31,8 @@
         }
 
         .booked {
-            background-color: #a0c4ff;
+            background-color: #ff0000;
+            pointer-events: none;
         }
 
         .schedule-table {
@@ -69,7 +71,7 @@
         </header>
         <nav>
             <ul>
-                <li><a href="accueil_stan.html">Accueil</a></li>
+                <li><a href="acceuil_stan.html">Accueil</a></li>
                 <li><a href="Parcourir.html">Tout Parcourir</a></li>
                 <li><a href="recherche.html">Recherche</a></li>
                 <li><a href="rendez_vous.html">Rendez-vous</a></li>
@@ -97,22 +99,22 @@
                     <td rowspan="5" id="specialty">Coach, Musculation</td>
                     <td rowspan="5" id="coach">DUMAIS, Guy</td>
                     <td>08h - 10h</td>
-                    <td class="available"><button onclick="reserveSlot('mon-8-10')">Réserver</button></td>
+                    <td class="available" id="mon-8-10"><button onclick="reserveSlot('mon-8-10')">Réserver</button></td>
                     <td class="unavailable"></td>
-                    <td class="available"><button onclick="reserveSlot('wed-8-10')">Réserver</button></td>
+                    <td class="available" id="wed-8-10"><button onclick="reserveSlot('wed-8-10')">Réserver</button></td>
                     <td class="unavailable"></td>
-                    <td class="available"><button onclick="reserveSlot('fri-8-10')">Réserver</button></td>
+                    <td class="available" id="fri-8-10"><button onclick="reserveSlot('fri-8-10')">Réserver</button></td>
                     <td class="unavailable"></td>
                     <td class="unavailable"></td>
                 </tr>
                 <tr>
                     <td>10h - 12h</td>
                     <td class="unavailable"></td>
-                    <td class="available"><button onclick="reserveSlot('tue-10-12')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('wed-10-12')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('thu-10-12')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('fri-10-12')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('sat-10-12')">Réserver</button></td>
+                    <td class="available" id="tue-10-12"><button onclick="reserveSlot('tue-10-12')">Réserver</button></td>
+                    <td class="available" id="wed-10-12"><button onclick="reserveSlot('wed-10-12')">Réserver</button></td>
+                    <td class="available" id="thu-10-12"><button onclick="reserveSlot('thu-10-12')">Réserver</button></td>
+                    <td class="available" id="fri-10-12"><button onclick="reserveSlot('fri-10-12')">Réserver</button></td>
+                    <td class="available" id="sat-10-12"><button onclick="reserveSlot('sat-10-12')">Réserver</button></td>
                     <td class="unavailable"></td>
                 </tr>
                 <tr>
@@ -121,28 +123,28 @@
                     <td class="unavailable"></td>
                     <td class="unavailable"></td>
                     <td class="unavailable"></td>
-                    <td class="available"><button onclick="reserveSlot('fri-12-14')">Réserver</button></td>
+                    <td class="available" id="fri-12-14"><button onclick="reserveSlot('fri-12-14')">Réserver</button></td>
                     <td class="unavailable"></td>
                     <td class="unavailable"></td>
                 </tr>
                 <tr>
                     <td>14h - 16h</td>
-                    <td class="available"><button onclick="reserveSlot('mon-14-16')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('tue-14-16')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('wed-14-16')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('thu-14-16')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('fri-14-16')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('sat-14-16')">Réserver</button></td>
+                    <td class="available" id="mon-14-16"><button onclick="reserveSlot('mon-14-16')">Réserver</button></td>
+                    <td class="available" id="tue-14-16"><button onclick="reserveSlot('tue-14-16')">Réserver</button></td>
+                    <td class="available" id="wed-14-16"><button onclick="reserveSlot('wed-14-16')">Réserver</button></td>
+                    <td class="available" id="thu-14-16"><button onclick="reserveSlot('thu-14-16')">Réserver</button></td>
+                    <td class="available" id="fri-14-16"><button onclick="reserveSlot('fri-14-16')">Réserver</button></td>
+                    <td class="available" id="sat-14-16"><button onclick="reserveSlot('sat-14-16')">Réserver</button></td>
                     <td class="unavailable"></td>
                 </tr>
                 <tr>
                     <td>16h - 18h</td>
-                    <td class="available"><button onclick="reserveSlot('mon-16-18')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('tue-16-18')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('wed-16-18')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('thu-16-18')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('fri-16-18')">Réserver</button></td>
-                    <td class="available"><button onclick="reserveSlot('sat-16-18')">Réserver</button></td>
+                    <td class="available" id="mon-16-18"><button onclick="reserveSlot('mon-16-18')">Réserver</button></td>
+                    <td class="available" id="tue-16-18"><button onclick="reserveSlot('tue-16-18')">Réserver</button></td>
+                    <td class="available" id="wed-16-18"><button onclick="reserveSlot('wed-16-18')">Réserver</button></td>
+                    <td class="available" id="thu-16-18"><button onclick="reserveSlot('thu-16-18')">Réserver</button></td>
+                    <td class="available" id="fri-16-18"><button onclick="reserveSlot('fri-16-18')">Réserver</button></td>
+                    <td class="available" id="sat-16-18"><button onclick="reserveSlot('sat-16-18')">Réserver</button></td>
                     <td class="unavailable"></td>
                 </tr>
             </table>
@@ -151,32 +153,6 @@
             <p>&copy; 2024 Sportify</p>
         </footer>
     </div>
-    <script>
-        function reserveSlot(slotId) {
-            const coachId = 1; // Remplacez par l'ID du coach réel
-            const clientId = 1; // Remplacez par l'ID du client réel
-            const salleId = 1; // Remplacez par l'ID de la salle réelle
-
-            const formData = new FormData();
-            formData.append('slot', slotId);
-            formData.append('coachId', coachId);
-            formData.append('clientId', clientId);
-            formData.append('salleId', salleId);
-
-            fetch('/piscine/reserver.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(text => {
-                alert(text);
-                location.reload();
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
-                alert('Erreur de réseau ou autre: ' + error);
-            });
-        }
-    </script>
+    <script src="script_rdv.js"></script>
 </body>
 </html>
