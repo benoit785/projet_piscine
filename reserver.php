@@ -22,26 +22,48 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $day = $date_parts[0];
     $time = str_replace('_', ':', $date_parts[1]);
 
-    $date_rdv = date("Y-m-d") . " $time:00"; // Vous pouvez changer pour la date réelle appropriée
+    // Convertir le jour en date réelle (ex: 'mon' -> '2024-06-01')
+    $day_map = [
+        'mon' => '2024-06-01',
+        'tue' => '2024-06-02',
+        'wed' => '2024-06-03',
+        'thu' => '2024-06-04',
+        'fri' => '2024-06-05',
+        'sat' => '2024-06-06',
+        'sun' => '2024-06-07',
+    ];
+    $date_rdv = $day_map[$day] . " $time:00";
 
-    $sql = "INSERT INTO prise_de_rendez_vous (id_client, id_coach, id_salle, date_rdv, type_communication, statut_rdv) 
-            VALUES (?, ?, ?, ?, 'In-person', 1)";
+    // Vérifier si le créneau est déjà réservé
+    $check_sql = "SELECT * FROM prise_de_rendez_vous WHERE date_rdv = ? AND id_coach = ?";
+    $check_stmt = $conn->prepare($check_sql);
+    $check_stmt->bind_param("si", $date_rdv, $coachId);
+    $check_stmt->execute();
+    $result = $check_stmt->get_result();
 
-    $stmt = $conn->prepare($sql);
-    if ($stmt === false) {
-        die("Erreur de préparation: " . $conn->error);
-    }
-
-    // Correction de la chaîne de définition du type et des variables de liaison
-    $stmt->bind_param("iiis", $clientId, $coachId, $salleId, $date_rdv);
-
-    if ($stmt->execute()) {
-        echo "Créneau réservé avec succès";
+    if ($result->num_rows > 0) {
+        echo "Ce créneau est déjà réservé.";
     } else {
-        echo "Erreur lors de la réservation: " . $stmt->error;
+        $sql = "INSERT INTO prise_de_rendez_vous (id_client, id_coach, id_salle, date_rdv, type_communication, statut_rdv) 
+                VALUES (?, ?, ?, ?, 'In-person', 1)";
+
+        $stmt = $conn->prepare($sql);
+        if ($stmt === false) {
+            die("Erreur de préparation: " . $conn->error);
+        }
+
+        $stmt->bind_param("iiis", $clientId, $coachId, $salleId, $date_rdv);
+
+        if ($stmt->execute()) {
+            echo "Créneau réservé avec succès";
+        } else {
+            echo "Erreur lors de la réservation: " . $stmt->error;
+        }
+
+        $stmt->close();
     }
 
-    $stmt->close();
+    $check_stmt->close();
     $conn->close();
 } else {
     echo "Méthode de requête non supportée";
