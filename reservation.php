@@ -15,6 +15,8 @@ if ($conn->connect_error) {
 $sql = "SELECT date_rdv FROM prise_de_rendez_vous WHERE statut_rdv = 1";
 $result = $conn->query($sql);
 
+//$sql = "SELECT date_rdv FROM prise_de_rendez_vous WHERE statut_rdv = 1";
+//$result = $conn->query($sql);
 $booked_slots = [];
 
 if ($result->num_rows > 0) {
