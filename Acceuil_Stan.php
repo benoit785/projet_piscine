@@ -57,7 +57,8 @@ if (isset($_SESSION['id_admin'])) {
                 <li><a href="Acceuil_Stan.php">Accueil</a></li>
                 <li><a href="Parcourir.html">Tout Parcourir</a></li>
                 <li><a href="recherche.php">Recherche</a></li>
-                <li><a href="Prendre_rendez_vous.html">Rendez-vous</a></li>
+                <li><a href="rendez_vous.php">Rendez-vous</a></li>
+                <li><a href="paiement.php">Rendez-vous</a></li>
                 <li><a href="compte2.php">Votre Compte</a></li>
             </ul>
 
