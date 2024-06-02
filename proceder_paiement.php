@@ -63,6 +63,21 @@ if ($stmt->execute()) {
 }
 ?>
 
+if ($stmt->execute()) {
+    // Insérer un message de confirmation dans la messagerie
+    $sujet = "Confirmation de Paiement";
+    $message = "Votre paiement de $montant € a été validé.\n";
+    $message .= "Détails de paiement :\n";
+    $message .= "Nom : $nom_client $prenom_client\n";
+    $message .= "Adresse : $adresse1 $adresse2, $ville, $code_postal, $pays\n";
+    $message .= "Téléphone : $num_telephone\n";
+    $message .= "Carte Etudiant : $num_etudiant\n";
+    $message .= "Type de carte : $method_paiement\n";
+    $message .= "Numéro de la carte : $num_carte\n";
+    $message .= "Nom sur la carte : $nom_carte\n";
+    $message .= "Date d'expiration : $date_expiration\n";
+    $message .= "Code de sécurité : $code_securite\n";
+    $date_envoi = date('Y-m-d H:i:s');
 <!DOCTYPE html>
 <html>
 <head>
