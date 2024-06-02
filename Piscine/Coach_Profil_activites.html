@@ -1,0 +1,191 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportify - Coach Profile</title>
+    <link rel="stylesheet" href="style_activites_Sportives.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Sportify: <span class="subtitle">Consultation Sportive</span></h1>
+            <img src="image.png" alt="Logo Sportify" class="logo">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="accueil_stan.html">Accueil</a></li>
+                <li><a href="Parcourir.html">Tout Parcourir</a></li>
+                <li><a href="recherche.html">Recherche</a></li>
+                <li><a href="rendez_vous.html">Rendez-vous</a></li>
+                <li><a href="compte.html">Votre Compte</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h2 id="coach-name">Coach Name</h2>
+            <div class="coach-profile">
+                <img id="coach-image" src="default_coach.png" alt="Coach Image">
+                <div class="coach-info">
+                    <h3 id="coach-fullname">Full Name</h3>
+                    <p id="coach-specialty">Specialty</p>
+                    <p id="coach-room">Room</p>
+                    <p id="coach-phone">Phone</p>
+                    <p>Email: <a id="coach-email" href="#">Email</a></p>
+                    <table id="coach-schedule">
+                        <tr>
+                            <th>Spécialité</th>
+                            <th>Médecin</th>
+                            <th>Lundi</th>
+                            <th>Mardi</th>
+                            <th>Mercredi</th>
+                            <th>Jeudi</th>
+                            <th>Vendredi</th>
+                            <th>Samedi</th>
+                        </tr>
+                        <tr>
+                            <td id="coach-specialty-cell">Specialty</td>
+                            <td id="coach-name-cell">Name</td>
+                            <td id="coach-schedule-mon">AM/PM</td>
+                            <td id="coach-schedule-tue">AM/PM</td>
+                            <td id="coach-schedule-wed">AM/PM</td>
+                            <td id="coach-schedule-thu">AM/PM</td>
+                            <td id="coach-schedule-fri">AM/PM</td>
+                            <td id="coach-schedule-sat">AM/PM</td>
+                        </tr>
+                    </table>
+                    <div class="actions">
+                        <button onclick="location.href='rdv_guy_dumais.html'">Prendre un RDV</button>
+                        <button onclick="location.href='communiquer_guy_dumais.html'">Communiquer avec le coach</button>
+                        <button onclick="location.href='cv_guy_dumais.html'">Voir son CV</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sportify</p>
+    </footer>
+    <script src="scriptsJS_Activites.js"></script>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportify - Coach Profile</title>
+    <link rel="stylesheet" href="style_activites_Sportives.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Sportify: <span class="subtitle">Consultation Sportive</span></h1>
+            <img src="image.png" alt="Logo Sportify" class="logo">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="Acceuil_Stan.html">Accueil</a></li>
+                <li><a href="Parcourir.html">Tout Parcourir</a></li>
+                <li><a href="recherche.html">Recherche</a></li>
+                <li><a href="Prendre_rendez_vous.html">Rendez-vous</a></li>
+                <li><a href="compte.html">Votre Compte</a></li>
+            </ul>
+        </nav>
+    </div>
+        <section>
+            <h2 id="coach-name">Coach Name</h2>
+            <div class="coach-profile">
+                <img id="coach-image" src="default_coach.png" alt="Coach Image">
+                <div class="coach-info">
+                    <h3 id="coach-fullname">Full Name</h3>
+                    <p id="coach-specialty">Specialty</p>
+                    <p id="coach-room">Room</p>
+                    <p id="coach-phone">Phone</p>
+                    <p>Email: <a id="coach-email" href="#">Email</a></p>
+
+                    <table class="schedule-table">
+                    <tr>
+                        <th>Spécialité</th>
+                        <th>Médecin</th>
+                        <th>Horaires</th>
+                        <th>Lundi</th>
+                        <th>Mardi</th>
+                        <th>Mercredi</th>
+                        <th>Jeudi</th>
+                        <th>Vendredi</th>
+                        <th>Samedi</th>
+                        <th>Dimanche</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" id="coach-specialty-cell">Coach de musculation</td>
+                        <td rowspan="5" id="coach-name-cell">DUMAIS, Guy</td>
+                        <td>8h - 10h</td>
+                        <td id="coach-schedule-mon-8-10" class="available"></td>
+                        <td id="coach-schedule-tue-8-10" class="unavailable"></td>
+                        <td id="coach-schedule-wed-8-10" class="available"></td>
+                        <td id="coach-schedule-thu-8-10" class="unavailable"></td>
+                        <td id="coach-schedule-fri-8-10" class="available"></td>
+                        <td id="coach-schedule-sat-8-10" class="unavailable"></td>
+                        <td id="coach-schedule-sun-8-10" class="unavailable"></td>
+                    </tr>
+                    <tr>
+                        <td>10h - 12h</td>
+                        <td id="coach-schedule-mon-10-12" class="unavailable"></td>
+                        <td id="coach-schedule-tue-10-12" class="available"></td>
+                        <td id="coach-schedule-wed-10-12" class="available"></td>
+                        <td id="coach-schedule-thu-10-12" class="available"></td>
+                        <td id="coach-schedule-fri-10-12" class="available"></td>
+                        <td id="coach-schedule-sat-10-12" class="available"></td>
+                        <td id="coach-schedule-sun-10-12" class="unavailable"></td>
+                    </tr>
+                    <tr>
+                        <td>12h - 14h</td>
+                        <td id="coach-schedule-mon-12-14" class="unavailable"></td>
+                        <td id="coach-schedule-tue-12-14" class="unavailable"></td>
+                        <td id="coach-schedule-wed-12-14" class="unavailable"></td>
+                        <td id="coach-schedule-thu-12-14" class="unavailable"></td>
+                        <td id="coach-schedule-fri-12-14" class="available"></td>
+                        <td id="coach-schedule-sat-12-14" class="unavailable"></td>
+                        <td id="coach-schedule-sun-12-14" class="unavailable"></td>
+                    </tr>
+                    <tr>
+                        <td>14h - 16h</td>
+                        <td id="coach-schedule-mon-14-16" class="available"></td>
+                        <td id="coach-schedule-tue-14-16" class="available"></td>
+                        <td id="coach-schedule-wed-14-16" class="available"></td>
+                        <td id="coach-schedule-thu-14-16" class="available"></td>
+                        <td id="coach-schedule-fri-14-16" class="available"></td>
+                        <td id="coach-schedule-sat-14-16" class="available"></td>
+                        <td id="coach-schedule-sun-14-16" class="unavailable"></td>
+                    </tr>
+                    <tr>
+                        <td>16h - 18h</td>
+                        <td id="coach-schedule-mon-16-18" class="available"></td>
+                        <td id="coach-schedule-tue-16-18" class="available"></td>
+                        <td id="coach-schedule-wed-16-18" class="available"></td>
+                        <td id="coach-schedule-thu-16-18" class="available"></td>
+                        <td id="coach-schedule-fri-16-18" class="available"></td>
+                        <td id="coach-schedule-sat-16-18" class="available"></td>
+                        <td id="coach-schedule-sun-16-18" class="unavailable"></td>
+                    </tr>
+                </table>
+
+
+
+                    <div class="actions">
+                        <button onclick="location.href='Prendre_rendez_vous.html'">Prendre un RDV</button>
+                        <button onclick="location.href='communiquer.php'">Communiquer avec le coach</button>
+                        <button onclick="location.href='cv.php'">Voir son CV</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sportify</p>
+    </footer>
+    <script src="scriptJS_Activites.js"></script>
+</body>
+</html>

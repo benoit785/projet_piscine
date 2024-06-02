@@ -1,0 +1,359 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_activites_Sportives.css">
+    <title>Prendre un RDV</title>
+    <style>
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .schedule-table th {
+            background-color: #f0f0f0;
+        }
+
+        .available button {
+            background-color: #fff;
+            border: none;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .unavailable {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .booked {
+            background-color: #a0c4ff;
+            pointer-events: none;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .actions button {
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .actions button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Sportify: <span class="subtitle">Consultation Sportive</span></h1>
+            <img src="image.png" alt="Logo Sportify" class="logo">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="acceuil_stan.html">Accueil</a></li>
+                <li><a href="Parcourir.html">Tout Parcourir</a></li>
+                <li><a href="recherche.html">Recherche</a></li>
+                <li><a href="rendez_vous.html">Rendez-vous</a></li>
+                <li><a href="compte.html">Votre Compte</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Prendre un Rendez-Vous</h1>
+        </header>
+        <section>
+            <table class="schedule-table">
+                <tr>
+                    <th>Spécialité</th>
+                    <th>Médecin</th>
+                    <th>Horaires</th>
+                    <th>Lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                    <th>Vendredi</th>
+                    <th>Samedi</th>
+                    <th>Dimanche</th>
+                </tr>
+                <tr>
+                    <td rowspan="5" id="specialty">Coach, Musculation</td>
+                    <td rowspan="5" id="coach">DUMAIS, Guy</td>
+                    <td>08h - 10h</td>
+                    <td class="available" id="mon-8-10"><button onclick="reserveSlot('mon-8-10')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                    <td class="available" id="wed-8-10"><button onclick="reserveSlot('wed-8-10')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                    <td class="available" id="fri-8-10"><button onclick="reserveSlot('fri-8-10')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                </tr>
+                <tr>
+                    <td>10h - 12h</td>
+                    <td class="unavailable"></td>
+                    <td class="available" id="tue-10-12"><button onclick="reserveSlot('tue-10-12')">Réserver</button></td>
+                    <td class="available" id="wed-10-12"><button onclick="reserveSlot('wed-10-12')">Réserver</button></td>
+                    <td class="available" id="thu-10-12"><button onclick="reserveSlot('thu-10-12')">Réserver</button></td>
+                    <td class="available" id="fri-10-12"><button onclick="reserveSlot('fri-10-12')">Réserver</button></td>
+                    <td class="available" id="sat-10-12"><button onclick="reserveSlot('sat-10-12')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                </tr>
+                <tr>
+                    <td>12h - 14h</td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                    <td class="available" id="fri-12-14"><button onclick="reserveSlot('fri-12-14')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                </tr>
+                <tr>
+                    <td>14h - 16h</td>
+                    <td class="available" id="mon-14-16"><button onclick="reserveSlot('mon-14-16')">Réserver</button></td>
+                    <td class="available" id="tue-14-16"><button onclick="reserveSlot('tue-14-16')">Réserver</button></td>
+                    <td class="available" id="wed-14-16"><button onclick="reserveSlot('wed-14-16')">Réserver</button></td>
+                    <td class="available" id="thu-14-16"><button onclick="reserveSlot('thu-14-16')">Réserver</button></td>
+                    <td class="available" id="fri-14-16"><button onclick="reserveSlot('fri-14-16')">Réserver</button></td>
+                    <td class="available" id="sat-14-16"><button onclick="reserveSlot('sat-14-16')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                </tr>
+                <tr>
+                    <td>16h - 18h</td>
+                    <td class="available" id="mon-16-18"><button onclick="reserveSlot('mon-16-18')">Réserver</button></td>
+                    <td class="available" id="tue-16-18"><button onclick="reserveSlot('tue-16-18')">Réserver</button></td>
+                    <td class="available" id="wed-16-18"><button onclick="reserveSlot('wed-16-18')">Réserver</button></td>
+                    <td class="available" id="thu-16-18"><button onclick="reserveSlot('thu-16-18')">Réserver</button></td>
+                    <td class="available" id="fri-16-18"><button onclick="reserveSlot('fri-16-18')">Réserver</button></td>
+                    <td class="available" id="sat-16-18"><button onclick="reserveSlot('sat-16-18')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                </tr>
+            </table>
+        </section>
+        <footer>
+            <p>&copy; 2024 Sportify</p>
+        </footer>
+    </div>
+    <script>
+        function reserveSlot(slotId) {
+            const coachId = 1; // Remplacez par l'ID du coach réel
+            const clientId = 1; // Remplacez par l'ID du client réel
+            const salleId = 1; // Remplacez par l'ID de la salle réelle
+
+            const formData = new FormData();
+            formData.append('slot', slotId);
+            formData.append('coachId', coachId);
+            formData.append('clientId', clientId);
+            formData.append('salleId', salleId);
+
+            fetch('reserver.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(text => {
+                alert(text);
+                location.reload();
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Erreur de réseau ou autre: ' + error);
+            });
+        }
+
+        // Fetch booked slots and mark them as booked
+        window.onload = function() {
+            fetch('reservation.php')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(slot => {
+                    const slotElement = document.getElementById(slot);
+                    if (slotElement) {
+                        slotElement.classList.add('booked');
+                        slotElement.innerHTML = 'Réservé';
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des créneaux réservés:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+ -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_rdv.css">
+    <title>Prendre un RDV</title>
+    <style>
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .schedule-table th {
+            background-color: #f0f0f0;
+        }
+
+        .available button {
+            background-color: #fff;
+            border: none;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .unavailable {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .booked {
+            background-color: #ff0000;
+            pointer-events: none;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .actions button {
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .actions button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Sportify: <span class="subtitle">Consultation Sportive</span></h1>
+            <img src="image.png" alt="Logo Sportify" class="logo">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="acceuil_stan.html">Accueil</a></li>
+                <li><a href="Parcourir.html">Tout Parcourir</a></li>
+                <li><a href="recherche.html">Recherche</a></li>
+                <li><a href="rendez_vous.html">Rendez-vous</a></li>
+                <li><a href="compte.html">Votre Compte</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Prendre un Rendez-Vous</h1>
+        </header>
+        <section>
+            <table class="schedule-table">
+                <tr>
+                    <th>Spécialité</th>
+                    <th>Médecin</th>
+                    <th>Horaires</th>
+                    <th>Lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                    <th>Vendredi</th>
+                    <th>Samedi</th>
+                    <th>Dimanche</th>
+                </tr>
+                <tr>
+                    <td rowspan="5" id="specialty">Coach, Musculation</td>
+                    <td rowspan="5" id="coach">DUMAIS, Guy</td>
+                    <td>08h - 10h</td>
+                    <td class="available" id="mon-8-10"><button onclick="reserveSlot('mon-8-10')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                    <td class="available" id="wed-8-10"><button onclick="reserveSlot('wed-8-10')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                    <td class="available" id="fri-8-10"><button onclick="reserveSlot('fri-8-10')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                </tr>
+                <tr>
+                    <td>10h - 12h</td>
+                    <td class="unavailable"></td>
+                    <td class="available" id="tue-10-12"><button onclick="reserveSlot('tue-10-12')">Réserver</button></td>
+                    <td class="available" id="wed-10-12"><button onclick="reserveSlot('wed-10-12')">Réserver</button></td>
+                    <td class="available" id="thu-10-12"><button onclick="reserveSlot('thu-10-12')">Réserver</button></td>
+                    <td class="available" id="fri-10-12"><button onclick="reserveSlot('fri-10-12')">Réserver</button></td>
+                    <td class="available" id="sat-10-12"><button onclick="reserveSlot('sat-10-12')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                </tr>
+                <tr>
+                    <td>12h - 14h</td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                    <td class="available" id="fri-12-14"><button onclick="reserveSlot('fri-12-14')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                    <td class="unavailable"></td>
+                </tr>
+                <tr>
+                    <td>14h - 16h</td>
+                    <td class="available" id="mon-14-16"><button onclick="reserveSlot('mon-14-16')">Réserver</button></td>
+                    <td class="available" id="tue-14-16"><button onclick="reserveSlot('tue-14-16')">Réserver</button></td>
+                    <td class="available" id="wed-14-16"><button onclick="reserveSlot('wed-14-16')">Réserver</button></td>
+                    <td class="available" id="thu-14-16"><button onclick="reserveSlot('thu-14-16')">Réserver</button></td>
+                    <td class="available" id="fri-14-16"><button onclick="reserveSlot('fri-14-16')">Réserver</button></td>
+                    <td class="available" id="sat-14-16"><button onclick="reserveSlot('sat-14-16')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                </tr>
+                <tr>
+                    <td>16h - 18h</td>
+                    <td class="available" id="mon-16-18"><button onclick="reserveSlot('mon-16-18')">Réserver</button></td>
+                    <td class="available" id="tue-16-18"><button onclick="reserveSlot('tue-16-18')">Réserver</button></td>
+                    <td class="available" id="wed-16-18"><button onclick="reserveSlot('wed-16-18')">Réserver</button></td>
+                    <td class="available" id="thu-16-18"><button onclick="reserveSlot('thu-16-18')">Réserver</button></td>
+                    <td class="available" id="fri-16-18"><button onclick="reserveSlot('fri-16-18')">Réserver</button></td>
+                    <td class="available" id="sat-16-18"><button onclick="reserveSlot('sat-16-18')">Réserver</button></td>
+                    <td class="unavailable"></td>
+                </tr>
+            </table>
+        </section>
+        <footer>
+            <p>&copy; 2024 Sportify</p>
+        </footer>
+    </div>
+    <script src="script_rdv.js"></script>
+</body>
+</html>
