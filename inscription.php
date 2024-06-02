@@ -15,10 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $photo_client = str_replace(' ', '+', $photo_client);
     $data = base64_decode($photo_client);
 
-    // Nom du fichier où l'image sera sauvegardée
+
     $file = '' . uniqid() . '.png';
     file_put_contents($file, $data);
     $photo_client = $file;
+    //$photo_du_client = $file;
 
     $sql = "INSERT INTO client (nom_client, prenom_client, email_client, mdp_client, photo_client, adresse, num_etudiant) VALUES ( '$nom', '$prenom', '$email', '$mdp', '$photo_client', '$adresse', '$num_etudiant')";
 
